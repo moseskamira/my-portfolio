@@ -41,8 +41,11 @@
 
     .experience-item, .project-item {
       background: #fff; padding: 25px; margin-bottom: 20px; border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s, opacity 0.6s;
+      opacity: 0; transform: translateY(30px);
     }
+    .experience-item.visible, .project-item.visible { opacity: 1; transform: translateY(0); }
+
     .experience-item:hover, .project-item:hover { transform: translateY(-5px); }
 
     .company { font-size: 1.1em; font-weight: 700; margin-top: 10px; margin-bottom: 10px; }
@@ -69,6 +72,7 @@
     </p>
   </header>
 
+  <!-- Introduction -->
   <section id="introduction">
     <h2 class="section-title">Introduction</h2>
     <p class="intro">
@@ -78,6 +82,7 @@
     </p>
   </section>
 
+  <!-- Skills -->
   <section id="skills">
     <h2 class="section-title">Skills</h2>
     <div class="skills-container">
@@ -100,36 +105,149 @@
       <div class="skill">Code Reviews</div>
       <div class="skill">Sprint Planning</div>
     </div>
-
     <div class="languages">
       <strong>Languages:</strong> English (Professional), Lusoga (Native), Luganda
     </div>
   </section>
 
-  <!-- Experience Section (abbreviated for brevity; keep the full content from previous version) -->
+  <!-- Experience -->
   <section id="experience">
     <h2 class="section-title">Experience</h2>
-    <!-- Add experience items here (Etinx, Mcash Uganda, Andela) -->
+
+    <!-- Etinx | Flutter Developer -->
+    <div class="experience-item">
+      <div class="company">Etinx | Flutter Developer</div>
+      <div><strong>Apr 2022 - Present | Estonia · Remote</strong></div>
+      <ul>
+        <li>Designed, developed, and maintained cross-platform mobile applications using Flutter and Dart for HealthTech, FinTech, and Enterprise platforms.</li>
+        <li>Developed Healthflow Patient & Clinician Apps with secure authentication, REST API integration, offline support, and interactive dashboards.</li>
+        <li>Developed Datagon App with order & quotation management, REST API sync, local storage caching, and analytics integration.</li>
+        <li>Developed Ndovu Mobile app using Bloc, local caching, Google SignIn, Apple SignIn, and analytics for 47k+ users on Google Play and 78k+ on App Store.</li>
+      </ul>
+    </div>
+
+    <!-- Etinx | Android Developer -->
+    <div class="experience-item">
+      <div class="company">Etinx | Android Developer</div>
+      <div><strong>Apr 2021 - Apr 2022 | Estonia · Remote</strong></div>
+      <ul>
+        <li>Developed and maintained Android version of Ndovu Mobile, managed Play Store release, and ensured stable releases.</li>
+        <li>Contributed to app’s early growth and stability before migrating to Flutter for cross-platform support.</li>
+      </ul>
+    </div>
+
+    <!-- Mcash Uganda -->
+    <div class="experience-item">
+      <div class="company">Mcash Uganda | Android Developer</div>
+      <div><strong>Nov 2019 - Apr 2021 | Uganda</strong></div>
+      <ul>
+        <li>Developed DFCU Agency Banking app with secure financial transactions (SchoolPay, NWSC, UMEME, NSSF, Investment Club).</li>
+        <li>Improved UI/UX by 30%, optimized queries by 50%, and reduced crash rates by 70%.</li>
+      </ul>
+    </div>
+
+    <!-- Andela -->
+    <div class="experience-item">
+      <div class="company">Andela | Software Engineer</div>
+      <div><strong>Dec 2018 - Oct 2019 | Kampala, Uganda</strong></div>
+      <ul>
+        <li>Refactored Converge Mobile from Java to Kotlin, improved stability, and maintained enterprise meeting room management workflows.</li>
+        <li>Debugged critical issues, optimized API usage, and improved overall app performance.</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- Projects Section (abbreviated for brevity; keep full content from previous version) -->
+  <!-- Projects -->
   <section id="projects">
     <h2 class="section-title">Projects</h2>
-    <!-- Add project items here (Datagon, Ndovu, Healthflow, DFCU, Converge) -->
+
+    <!-- Datagon App -->
+    <div class="project-item">
+      <div class="company">Datagon App | Etinx</div>
+      <div><strong>Apr 2025 - Present</strong></div>
+      <ul>
+        <li>Built cross-platform Flutter app with Bloc for modular architecture.</li>
+        <li>Order & quotation management, REST API sync, local caching, interactive dashboards, analytics integration.</li>
+        <li>Ensured smooth performance and scalability for multiple concurrent users.</li>
+        <li>Collaborated with backend & design teams to maintain API consistency & CI/CD workflows.</li>
+        <li>Skills: Flutter/Dart, Bloc, Firebase, Sentry, Crashlytics</li>
+      </ul>
+    </div>
+
+    <!-- Ndovu Mobile -->
+    <div class="project-item">
+      <div class="company">Ndovu: Save & Invest | Etinx</div>
+      <div><strong>Apr 2021 - Mar 2025</strong></div>
+      <ul>
+        <li>Modular Flutter app using Bloc, secure authentication, real-time REST API updates.</li>
+        <li>Integrated Customer.io, Mixpanel analytics, and optimized performance for 10k+ active users.</li>
+        <li>Deployed to Google Play & Apple App Store ensuring smooth distribution.</li>
+        <li>Skills: State Management, Customer.io, Mixpanel, REST APIs, Fastlane, Offline/Online Sync</li>
+      </ul>
+    </div>
+
+    <!-- Healthflow Patient App -->
+    <div class="project-item">
+      <div class="company">Healthflow (Patient) App | Etinx</div>
+      <div><strong>May 2022 - Sep 2024</strong></div>
+      <ul>
+        <li>Cross-platform Flutter app using Bloc for patient interactions, appointments, and medical records.</li>
+        <li>Implemented secure authentication, REST APIs, and analytics integration.</li>
+        <li>Skills: Flutter/Dart, Bloc, Firebase, REST APIs</li>
+      </ul>
+    </div>
+
+    <!-- Healthflow Clinician App -->
+    <div class="project-item">
+      <div class="company">Healthflow (Clinician) App | Etinx</div>
+      <div><strong>Jun 2023 - Nov 2023</strong></div>
+      <ul>
+        <li>Flutter app for doctors supporting online/offline modes, dashboards, reporting, secure authentication.</li>
+        <li>Skills: Flutter/Dart, Bloc, Firebase, REST APIs</li>
+      </ul>
+    </div>
+
+    <!-- DFCU Agency Banking -->
+    <div class="project-item">
+      <div class="company">DFCU AgencyBanking | Mcash Uganda</div>
+      <div><strong>Nov 2019 - Apr 2021</strong></div>
+      <ul>
+        <li>Extended banking services to agents with SchoolPay, NWSC, UMEME, NSSF, and Investment Club functionality.</li>
+        <li>Skills: State Management, Android/Java, REST APIs, Teamwork</li>
+      </ul>
+    </div>
+
+    <!-- Converge Mobile -->
+    <div class="project-item">
+      <div class="company">Converge Mobile | Andela</div>
+      <div><strong>Dec 2018 - Oct 2019</strong></div>
+      <ul>
+        <li>Refactored Java to Kotlin, debugged issues, maintained enterprise meeting room management app.</li>
+        <li>Skills: Android/Java, Android/Kotlin</li>
+      </ul>
+    </div>
+
   </section>
 
   <script>
-    // Scroll animation for skills
+    // Animate skills
     const skills = document.querySelectorAll('.skill');
-    const observer = new IntersectionObserver((entries) => {
+    const observerSkills = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.3 });
+    skills.forEach(skill => observerSkills.observe(skill));
 
-    skills.forEach(skill => observer.observe(skill));
+    // Animate experience and projects
+    const cards = document.querySelectorAll('.experience-item, .project-item');
+    const observerCards = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observerCards.observe(card));
   </script>
+
 </body>
 </html>
