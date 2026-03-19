@@ -47,7 +47,6 @@
       max-width: 1000px;
       margin: 50px auto;
       padding: 0 20px;
-      animation: slideIn 1s ease;
     }
     h2 {
       border-left: 5px solid #ff9800;
@@ -55,32 +54,64 @@
       margin-bottom: 20px;
       color: #555;
     }
+
+    /* Containers */
     .summary, .skills, .experience, .projects {
       background-color: #fff;
-      padding: 25px;
+      padding: 30px;
       margin-bottom: 40px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideIn 0.8s ease forwards;
     }
+
+    /* Delay animations for each section */
+    .skills { animation-delay: 0.2s; }
+    .experience { animation-delay: 0.4s; }
+    .projects { animation-delay: 0.6s; }
+
+    /* Skills list */
     .skills ul {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
       list-style: none;
       padding: 0;
     }
     .skills ul li {
       background-color: #e0e0e0;
-      padding: 8px 12px;
-      border-radius: 20px;
+      padding: 10px 18px;
+      border-radius: 25px;
       font-size: 0.95em;
       text-align: center;
+      min-width: 120px;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: default;
     }
+    .skills ul li:hover {
+      transform: translateY(-5px);
+      background-color: #ff9800;
+      color: #fff;
+    }
+
+    /* Experience & Projects */
     .experience-item, .project-item {
       margin-bottom: 25px;
+      padding: 15px;
+      border-left: 4px solid #ff9800;
+      background-color: #fafafa;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .experience-item:hover, .project-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     }
     .experience-item h3, .project-item h3 {
-      margin: 0;
+      margin: 0 0 5px;
       color: #333;
     }
     .experience-item p, .project-item p {
@@ -94,7 +125,9 @@
     .skills-header {
       margin-top: 10px;
       font-weight: 600;
+      text-align: center;
     }
+
     footer {
       background-color: #444;
       color: #fff;
@@ -109,6 +142,8 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Animations */
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
