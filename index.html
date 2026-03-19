@@ -4,184 +4,294 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kamira Moses - Flutter Developer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background-color: #f4f4f4; color: #333; line-height: 1.6; }
-    a { color: #555; text-decoration: none; transition: color 0.3s; }
-    a:hover { color: #000; }
-    header { background-color: #e0e0e0; padding: 40px 20px; text-align: center; animation: fadeInDown 1s ease-out; }
-    header h1 { font-size: 3rem; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; margin-bottom: 5px; }
-    .contact-links a { margin: 0 10px; font-weight: bold; }
-    main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-    section { margin-bottom: 40px; animation: fadeInUp 1s ease-out; }
-    section h2 { font-size: 2rem; margin-bottom: 15px; border-bottom: 2px solid #ccc; display: inline-block; padding-bottom: 5px; }
-    ul { list-style: inside disc; margin-top: 10px; }
-    .skills span { display: inline-block; background: #dcdcdc; color: #333; padding: 5px 10px; margin: 5px 5px 0 0; border-radius: 4px; font-size: 0.9rem; }
-    .experience-job { background: #e8e8e8; padding: 15px 20px; border-radius: 6px; margin-bottom: 20px; }
-    .job-title { font-weight: bold; font-size: 1.2rem; margin-bottom: 5px; }
-    .job-meta { font-size: 0.9rem; color: #555; margin-bottom: 10px; }
-    .section-subtitle { font-weight: bold; margin: 10px 0; font-size: 1rem; color: #444; }
-    .experience ul { margin-left: 20px; margin-top: 5px; }
-    footer { text-align: center; padding: 20px; background-color: #e0e0e0; margin-top: 40px; font-size: 0.9rem; }
-    .separator { border-top: 2px dashed #bbb; margin: 20px 0; }
-    /* Animations */
-    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: #444;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      margin: 10px 0 0;
+      font-size: 1.2em;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff9800;
+    }
+    section {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+      animation: slideIn 1s ease;
+    }
+    h2 {
+      border-left: 5px solid #ff9800;
+      padding-left: 10px;
+      margin-bottom: 20px;
+      color: #555;
+    }
+    .summary, .skills, .experience, .projects {
+      background-color: #fff;
+      padding: 25px;
+      margin-bottom: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .skills ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+    }
+    .skills ul li {
+      background-color: #e0e0e0;
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-size: 0.95em;
+      text-align: center;
+    }
+    .experience-item, .project-item {
+      margin-bottom: 25px;
+    }
+    .experience-item h3, .project-item h3 {
+      margin: 0;
+      color: #333;
+    }
+    .experience-item p, .project-item p {
+      margin: 5px 0;
+      line-height: 1.5;
+    }
+    .company, .project-role {
+      font-weight: 500;
+      color: #555;
+    }
+    .skills-header {
+      margin-top: 10px;
+      font-weight: 600;
+    }
+    footer {
+      background-color: #444;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    footer a {
+      color: #ff9800;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes slideIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Kamira Moses</h1>
     <p>Flutter Developer | Mobile Applications Developer</p>
-    <p class="contact-links">
-      📞 +256(0)789608543 | ✉️ 
-      <a href="mailto:moses.african@gmail.com">moses.african@gmail.com</a> | 
-      <a href="https://github.com/moseskamira" target="_blank">GitHub</a> | 
+    <nav>
+      <a href="mailto:moses.african@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/moses-kamira-1b9425142/" target="_blank">LinkedIn</a>
-    </p>
+      <a href="https://github.com/moseskamira" target="_blank">GitHub</a>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>Summary</h2>
-      <p>
-        Senior Mobile Applications Developer with 7+ years in Android and 5+ years specializing in Flutter cross-platform architecture. Proven expertise in scalable mobile systems, CI/CD automation, secure API integrations, and production-grade app deployment on Google Play and Apple App Store.
-      </p>
-    </section>
+  <!-- Introduction / Summary -->
+  <section class="summary">
+    <h2>Introduction</h2>
+    <p>
+      Senior Mobile Applications Developer with 7+ years of experience in Android and 5+ years specializing in Flutter cross-platform architecture and scalable mobile systems.
+      Proven track record of leading feature development, optimizing application performance, strengthening mobile security, and implementing CI/CD automation for production-grade apps deployed on Google Play and Apple App Store.
+    </p>
+    <p>
+      Experienced in clean architecture design, secure API integrations, testing practices, and cross-functional collaboration within global Agile teams.
+      Passionate about building resilient, high-performance mobile platforms that scale efficiently.
+    </p>
+  </section>
 
-    <section class="experience">
-      <h2>Experience</h2>
+  <!-- Skills Section -->
+  <section class="skills">
+    <h2>Skills</h2>
+    <h3 class="skills-header">Technical Skills</h3>
+    <ul>
+      <li>Flutter (Dart)</li>
+      <li>Android (Java, Kotlin)</li>
+      <li>Jetpack Compose</li>
+      <li>Clean Architecture</li>
+      <li>MVVM</li>
+      <li>RESTful APIs</li>
+      <li>GraphQL</li>
+      <li>Firebase (Auth, Firestore, Analytics)</li>
+      <li>CI/CD (Fastlane)</li>
+      <li>Secure Storage</li>
+      <li>Token-Based Authentication</li>
+      <li>Widget, Integration & Unit Testing</li>
+      <li>Debugging & Performance Optimization</li>
+      <li>Mobile SDK & Plugin Development</li>
+    </ul>
+    <h3 class="skills-header">Collaboration & Agile</h3>
+    <ul>
+      <li>SCRUM, JIRA, ClickUp</li>
+      <li>Code Reviews & Sprint Planning</li>
+      <li>Teamwork & Mentorship</li>
+    </ul>
+    <h3 class="skills-header">Languages</h3>
+    <ul>
+      <li>English (Professional)</li>
+      <li>Luganda (Native)</li>
+      <li>Lusoga (Native)</li>
+    </ul>
+  </section>
 
-      <!-- Etinx -->
-      <div class="experience-job">
-        <div class="job-title">Flutter Developer @ Etinx, Estonia (Remote)</div>
-        <div class="job-meta">Apr 2022 – Present · 4 yrs | Contract</div>
-        <p>Designed, developed, and maintained cross-platform mobile applications using Flutter and Dart, delivering scalable solutions across HealthTech, FinTech, and Enterprise platforms.</p>
+  <!-- Experience Section -->
+  <section class="experience">
+    <h2>Experience</h2>
 
-        <div class="separator"></div>
+    <!-- Etinx -->
+    <div class="experience-item">
+      <h3>Etinx | Flutter Developer</h3>
+      <p class="company">Apr 2022 - Present · Estonia / Remote</p>
+      <p>Designed, developed, and maintained cross-platform mobile applications using Flutter and Dart, delivering scalable solutions across HealthTech, FinTech, and Enterprise platforms.</p>
 
-        <div class="section-subtitle">HealthTech Applications</div>
-        <ul>
-          <li><b>Healthflow Patient App</b> – Region-restricted, US only.
-            <ul>
-              <li>Patient-facing app to access healthcare services, manage appointments, and interact with providers.</li>
-              <li>Implemented secure authentication, RESTful APIs, optimized UI for Android & iOS.</li>
-              <li>Technologies: Flutter, Dart, REST APIs, BloC.</li>
-            </ul>
-          </li>
-          <li><b>Healthflow Clinician App</b> – Internal enterprise.
-            <ul>
-              <li>Used by doctors and healthcare personnel.</li>
-              <li>Offline & online modes with local data synchronization.</li>
-              <li>Technologies: Flutter, Dart, REST APIs, BloC, Local Storage, Offline Sync.</li>
-            </ul>
-          </li>
-          <li><b>Datagon App</b> – Client-specific enterprise deployment.
-            <ul>
-              <li>Hospital order and quotation management system for medical supplies.</li>
-              <li>Local storage, caching, RESTful API integrations for inventory & orders.</li>
-            </ul>
-          </li>
-        </ul>
+      <strong>HealthTech Applications</strong>
+      <ul>
+        <li><strong>Healthflow Patient App:</strong> Built patient-facing app for US users with secure authentication, appointments, and RESTful API integrations. Technologies: Flutter, Dart, REST APIs, Bloc.</li>
+        <li><strong>Healthflow Clinician App:</strong> Developed clinician app with offline & online modes, local data sync. Technologies: Flutter, Dart, REST APIs, Bloc, Local Storage.</li>
+        <li><strong>Datagon App:</strong> Hospital order & quotation management system with caching, RESTful APIs, dashboards, and analytics. Technologies: Flutter, Dart, Bloc, Firebase, Crashlytics.</li>
+      </ul>
 
-        <div class="separator"></div>
+      <strong>FinTech Applications</strong>
+      <ul>
+        <li><strong>Ndovu Mobile:</strong> Flutter migration of app with Bloc state management, caching, analytics, API optimization, Google & Apple Sign-In, Fastlane. Reached 47,600+ Android & 78,000+ iOS users.</li>
+      </ul>
+    </div>
 
-        <div class="section-subtitle">FinTech Applications</div>
-        <ul>
-          <li><b>Ndovu Mobile</b>
-            <ul>
-              <li>Reached 47,600+ users on Google Play, 78,000+ on Apple App Store.</li>
-              <li>Migrated app from native Android to Flutter, reducing dev time by 60%.</li>
-              <li>Implemented Bloc state management, caching, and API integrations.</li>
-              <li>Integrated Customer.io and Mixpanel for analytics & engagement tracking.</li>
-              <li>Optimized APIs & queries, reducing load time by 40%.</li>
-              <li>Technologies: Flutter, Dart, REST APIs, Bloc, Local Storage, Offline Sync, Google SignIn, Apple SignIn, Fastlane.</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+    <!-- Mcash Uganda -->
+    <div class="experience-item">
+      <h3>Mcash Uganda | Android Developer</h3>
+      <p class="company">Nov 2019 - Apr 2021 · Uganda</p>
+      <ul>
+        <li><strong>DFCU Agency Banking App:</strong> Developed secure banking features for agents (School Pay, NWSC, UMEME, NSSF contributions, Investment Club). Improved performance & UX by 30-70%. Technologies: Android, Java.</li>
+      </ul>
+    </div>
 
-      <!-- Android Developer @ Etinx -->
-      <div class="experience-job">
-        <div class="job-title">Android Developer @ Etinx, Estonia (Remote)</div>
-        <div class="job-meta">Apr 2021 – Apr 2022 · 1 yr 1 mo</div>
-        <div class="section-subtitle">FinTech Applications</div>
-        <ul>
-          <li><b>Ndovu Mobile</b> – Initially implemented in Kotlin, later migrated to Flutter.
-            <ul>
-              <li>Developed Android version and managed release process on Google Play.</li>
-              <li>Handled updates, versioning, production deployments.</li>
-              <li>Supported early app growth before cross-platform migration.</li>
-              <li>Technologies: Android, Kotlin, Flutter, Dart, REST APIs, Firebase.</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+    <!-- Andela -->
+    <div class="experience-item">
+      <h3>Andela | Software Engineer</h3>
+      <p class="company">Dec 2018 - Oct 2019 · Kampala, Uganda</p>
+      <ul>
+        <li><strong>Converge Mobile:</strong> Refactored Java to Kotlin, improved maintainability, resolved critical bugs, maintained meeting room workflows, optimized performance. Technologies: Android, Kotlin, Java.</li>
+      </ul>
+    </div>
+  </section>
 
-      <!-- Mcash Uganda -->
-      <div class="experience-job">
-        <div class="job-title">Android Developer @ Mcash Uganda</div>
-        <div class="job-meta">Nov 2019 – Sep 2021 · 1 yr 11 mos</div>
-        <div class="section-subtitle">FinTech Applications</div>
-        <ul>
-          <li><b>DFCU Agency Banking App</b> – Internal enterprise for bank agents only.
-            <ul>
-              <li>Integrated secure banking features: School Pay, NWSC, UMEME, NSSF, Investment Club.</li>
-              <li>UI/UX improvements increased engagement by 30%.</li>
-              <li>Optimized database queries, reducing transaction time by 50%.</li>
-              <li>Debugged critical issues, reducing crash rates by 70%.</li>
-              <li>Tech Stack: Android, Java.</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+  <!-- Projects Section -->
+  <section class="projects">
+    <h2>Projects</h2>
 
-      <!-- Andela -->
-      <div class="experience-job">
-        <div class="job-title">Software Engineer @ Andela, Uganda</div>
-        <div class="job-meta">Dec 2018 – Oct 2019 · 11 mos</div>
-        <div class="section-subtitle">Enterprise Applications</div>
-        <ul>
-          <li><b>Converge Mobile</b> – Internal enterprise app for company meeting room management.
-            <ul>
-              <li>Refactored legacy Java codebase to Kotlin, improving maintainability.</li>
-              <li>Debugged critical issues, enhancing stability.</li>
-              <li>Collaborated to ensure smooth integration & consistent behavior.</li>
-              <li>Tech Stack: Android, Kotlin, Java.</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+    <div class="project-item">
+      <h3>Datagon App</h3>
+      <p>Apr 2025 - Present | Etinx</p>
+      <ul>
+        <li>Built cross-platform Flutter app with Bloc for modular and maintainable architecture.</li>
+        <li>Implemented order & quotation workflows, RESTful APIs, local storage, dashboards.</li>
+        <li>Integrated analytics and ensured scalability for multiple concurrent users.</li>
+      </ul>
+      <p><strong>Skills:</strong> Flutter/Dart, Bloc, Firebase, Sentry, Crashlytics</p>
+    </div>
 
-    </section>
+    <div class="project-item">
+      <h3>Ndovu: Save & Invest</h3>
+      <p>Apr 2021 - Mar 2025 | Etinx</p>
+      <ul>
+        <li>Built modular Flutter app with Bloc, secure authentication, real-time updates.</li>
+        <li>Integrated Customer.io & Mixpanel, optimized API & caching, 10k+ active users.</li>
+        <li>Deployed on Google Play & Apple App Store.</li>
+      </ul>
+      <p><strong>Skills:</strong> Flutter/Dart, REST APIs, Bloc, Customer.io, Mixpanel, Fastlane</p>
+    </div>
 
-    <section>
-      <h2>Skills</h2>
-      <div class="skills">
-        <span>Flutter (Dart)</span>
-        <span>Android (Java, Kotlin)</span>
-        <span>Jetpack Compose</span>
-        <span>Clean Architecture</span>
-        <span>MVVM</span>
-        <span>RESTful APIs</span>
-        <span>GraphQL</span>
-        <span>Firebase (Auth, Firestore, Analytics)</span>
-        <span>CI/CD (Fastlane)</span>
-        <span>Git & GitHub</span>
-        <span>Secure Storage & Token-Based Auth</span>
-        <span>Unit & Integration Testing</span>
-      </div>
-    </section>
+    <div class="project-item">
+      <h3>Healthflow (Patient App)</h3>
+      <p>May 2022 - Sep 2024 | Etinx</p>
+      <ul>
+        <li>Patient-facing cross-platform app with secure authentication, appointments, REST APIs.</li>
+        <li>Integrated notifications & analytics, dynamic forms, scalable performance.</li>
+      </ul>
+      <p><strong>Skills:</strong> Flutter/Dart, Bloc, Firebase, REST APIs</p>
+    </div>
 
-    <section>
-      <h2>Languages</h2>
-      <p>English (Professional), Lusoga (Native), Luganda</p>
-    </section>
-  </main>
+    <div class="project-item">
+      <h3>Healthflow (Clinician App)</h3>
+      <p>Jun 2023 - Nov 2023 | Etinx</p>
+      <ul>
+        <li>Clinician app supporting online/offline modes, dashboards, reporting, analytics.</li>
+        <li>Ensured app performance, scalability & collaborated on CI/CD pipelines.</li>
+      </ul>
+      <p><strong>Skills:</strong> Flutter/Dart, Bloc, Firebase, REST APIs</p>
+    </div>
+
+    <div class="project-item">
+      <h3>DFCU Agency Banking</h3>
+      <p>Nov 2019 - Apr 2021 | Mcash Uganda</p>
+      <ul>
+        <li>Banking app for agents with School Pay, NWSC, UMEME, NSSF, Investment Club.</li>
+        <li>Improved UX, performance, and stability. Technologies: Android, Java</li>
+      </ul>
+      <p><strong>Skills:</strong> Android/Java, REST APIs, State Management</p>
+    </div>
+
+    <div class="project-item">
+      <h3>Converge Mobile</h3>
+      <p>Dec 2018 - Oct 2019 | Andela</p>
+      <ul>
+        <li>Internal enterprise meeting room app. Refactored Java → Kotlin, improved stability, optimized CI/CD workflows.</li>
+      </ul>
+      <p><strong>Skills:</strong> Android/Kotlin, Android/Java</p>
+    </div>
+  </section>
 
   <footer>
-    © 2026 Kamira Moses. All rights reserved.
+    <p>© 2026 Kamira Moses</p>
+    <p>
+      <a href="mailto:moses.african@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/moses-kamira-1b9425142/" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/moseskamira" target="_blank">GitHub</a>
+    </p>
   </footer>
 </body>
 </html>
