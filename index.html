@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+Put your HTML text here<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,6 +6,40 @@
   <title>Kamira Moses - Flutter Developer Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
+  .skill {
+  background: #555;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Animation */
+.skill:hover {
+  transform: translateY(-6px) scale(1.05);
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Glow effect */
+.skill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: 0.5s;
+}
+
+.skill:hover::before {
+  left: 100%;
+}
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #f7f7f7;
@@ -65,10 +99,31 @@
     <h1>Kamira Moses</h1>
     <p>Flutter Developer | Mobile Applications Developer</p>
     <p class="contact">
-      <a href="mailto:moses.african@gmail.com">Email: moses.african@gmail.com</a> |
-      <a href="tel:+256789608543">Phone: +256(0)789608543</a> |
-      <a href="https://github.com/moseskamira" target="_blank">GitHub</a> |
-      <a href="https://www.linkedin.com/in/moses-kamira-1b9425142/" target="_blank">LinkedIn</a>
+              <!-- GitHub Icon -->
+    <a href="https://github.com/moseskamira" target="_blank" title="GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" viewBox="0 0 24 24">
+        <path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.99 3.22 9.23 7.69 10.72.56.1.76-.24.76-.53 0-.26-.01-1.14-.02-2.07-3.13.68-3.79-1.51-3.79-1.51-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1.01 1.72 2.65 1.22 3.3.93.1-.73.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.55 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.11-2.95 0 0 .95-.3 3.1 1.15a10.7 10.7 0 0 1 5.65 0c2.15-1.45 3.1-1.15 3.1-1.15.61 1.53.23 2.67.11 2.95.72.78 1.16 1.78 1.16 3 0 4.31-2.63 5.27-5.14 5.55.4.34.75 1 .75 2.02 0 1.46-.01 2.64-.01 3 .01.29.2.63.77.52 4.46-1.49 7.68-5.73 7.68-10.72C23.25 5.48 18.27.5 12 .5z"/>
+      </svg>
+    </a>
+
+    <!-- LinkedIn Icon -->
+    <a href="https://www.linkedin.com/in/moses-kamira-1b9425142/" target="_blank" title="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" viewBox="0 0 24 24">
+        <path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6S0 4.88 0 3.5 1.12 1 2.49 1 4.98 2.12 4.98 3.5zM.5 8h4v14h-4V8zm7.5 0h3.8v1.92h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.09V22h-4v-7.1c0-1.69-.03-3.86-2.35-3.86-2.36 0-2.72 1.84-2.72 3.74V22h-4V8z"/>
+      </svg>
+    </a>
+     <a href="mailto:moses.african@gmail.com" title="Email">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" viewBox="0 0 24 24">
+        <path d="M20 4H4a2 2 0 0 0-2 2v.01l10 6.99 10-6.99V6a2 2 0 0 0-2-2zm0 4.24-8 5.6-8-5.6V18a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.24z"/>
+      </svg>
+    </a> 
+       <!-- Phone Icon -->
+    <a href="tel:+256789608543" title="Call">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.466 15.466 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.31.57 3.58.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C10.85 22 2 13.15 2 2a1 1 0 0 1 1-1h4.5a1 1 0 0 1 1 1c0 1.27.2 2.47.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/>
+      </svg>
+    </a> 
+   
     </p>
   </header>
 
@@ -76,7 +131,7 @@
   <section id="introduction">
     <h2 class="section-title">Introduction</h2>
     <p class="intro">
-      Senior Mobile Applications Developer with 7+ years of experience in Mobile Applications Development including 5+ years specializing in Flutter cross-platform architecture and scalable mobile systems.
+      I am a Senior Mobile Applications Developer with 7+ years of experience in Mobile Applications Development including 5+ years specializing in Flutter cross-platform architecture and scalable mobile systems.
       Proven track record in leading feature development, optimizing application performance, strengthening mobile security, and implementing CI/CD automation for production-grade apps deployed on Google Play and Apple App Store.
       Experienced in clean architecture, secure API integrations, testing practices, and Agile collaboration. Passionate about building resilient, high-performance mobile platforms that scale efficiently.
     </p>
@@ -87,15 +142,17 @@
     <h2 class="section-title">Skills</h2>
     <div class="skills-container">
       <div class="skill">Flutter (Dart)</div>
-      <div class="skill">Android (Java, Kotlin)</div>
+      <div class="skill">State Management (BloC, Riverpod, Provider, GetX)</div>
+       <div class="skill">Firebase (Auth, Firestore, Analytics)</div>
+        <div class="skill">REST & GraphQL APIs</div>
+          <div class="skill">CI/CD (Fastlane)</div>
+           <div class="skill">Analytics (Mixpanel)</div>
+            <div class="skill">Monitoring (Sentry)</div>
+             <div class="skill">Offline-first systems</div>
+        <div class="skill">Android (Java, Kotlin)</div>
       <div class="skill">Jetpack Compose</div>
       <div class="skill">Clean Architecture</div>
       <div class="skill">MVVM</div>
-      <div class="skill">Bloc</div>
-      <div class="skill">Riverpod</div>
-      <div class="skill">Provider</div>
-      <div class="skill">REST & GraphQL APIs</div>
-      <div class="skill">Firebase (Auth, Firestore, Analytics)</div>
       <div class="skill">Secure Storage & Token Auth</div>
       <div class="skill">Widget, Unit & Integration Testing</div>
       <div class="skill">Debugging & Performance Optimization</div>
