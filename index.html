@@ -1,299 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kamira Moses - Flutter Developer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-  <style>
-    /* ================= BASE ================= */
-    * {
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moses Kamira - Flutter Developer Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ================= BASE ================= */
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:'Roboto', sans-serif; background:#f7f7f7; color:#333; overflow-x:hidden; }
 
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      background: #f7f7f7;
-      color: #333;
-    }
+section { padding:60px 20px; max-width:1200px; margin:auto; }
+h1,h2,h3,h4,h5 { margin:0; }
+a { text-decoration:none; color:#fff; transition:color 0.3s; }
+a:hover { color:#ffd700; }
+ul { padding-left:18px; }
 
-    section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+/* ================= HEADER ================= */
+header { background:#222; color:#fff; padding:60px 20px; text-align:center; }
+header h1 { font-size:3em; margin-bottom:10px; }
+header p { margin:5px 0; }
+header .contact a { margin:0 10px; }
 
-    h1, h2, h3, h4, h5 {
-      margin: 0;
-    }
+/* ================= TITLES ================= */
+.section-title { text-align:center; font-size:2.2em; margin-bottom:50px; color:#1e2a78; }
+.intro { max-width:900px; margin:30px auto; text-align:center; font-size:1.1em; color:#444; line-height:1.7; }
+.languages { text-align:center; margin-top:20px; font-size:1.1em; color:#444; }
 
-    a {
-      text-decoration: none;
-      color: #fff;
-      transition: color 0.3s;
-    }
+/* ================= SKILLS ================= */
+.skills-container { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin-top:30px; }
+.skill { background:#555; color:#fff; padding:10px 20px; border-radius:30px; font-weight:500; opacity:0; transform:translateY(20px); transition:all 0.6s ease; }
+.skill.visible { opacity:1; transform:translateY(0); }
+.skill:hover { transform:translateY(-6px) scale(1.05); background:linear-gradient(135deg,#007bff,#00c6ff); box-shadow:0 8px 20px rgba(0,123,255,0.4); }
 
-    a:hover {
-      color: #ffd700;
-    }
+/* ================= TIMELINE ================= */
+.timeline { position:relative; }
+.timeline::before {
+  content:''; position:absolute; left:50%; top:0; width:4px; height:100%; background:#cdd2ff; transform:translateX(-50%);
+}
+.timeline-item { width:50%; padding:20px; position:relative; opacity:0; transform:translateY(40px); transition:all 0.6s ease; }
+.timeline-item.show { opacity:1; transform:translateY(0); }
+.timeline-item.left { left:0; }
+.timeline-item.right { left:50%; }
+.card { background:linear-gradient(135deg,#3d44ff,#5f6bff); color:#fff; padding:20px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.1); }
+.circle { position:absolute; left:50%; top:30px; transform:translate(-50%,-50%); width:18px; height:18px; background:#fff; border:4px solid #5f6bff; border-radius:50%; z-index:2; }
 
- ul {
-      padding-left: 18px;
-    }
+/* ================= EXPERIENCE & PROJECTS ================= */
+.experience-item, .project-item {
+  background:#fff; padding:25px; margin-bottom:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); opacity:0; transform:translateY(30px); transition:all 0.6s ease;
+}
+.experience-item.visible, .project-item.visible { opacity:1; transform:translateY(0); }
+.experience-item:hover, .project-item:hover { transform:translateY(-5px); }
+.company { font-size:1.1em; font-weight:700; margin-bottom:10px; }
 
-    /* ================= HEADER ================= */
-    header {
-      background: #222;
-      color: #fff;
-      padding: 60px 20px;
-      text-align: center;
-    }
+/* ================= MOBILE ================= */
+@media (max-width:768px){
+  .timeline::before { left:10px; }
+  .timeline-item { width:100%; padding-left:40px; }
+  .timeline-item.right { left:0; }
+  .circle { left:10px; }
+}
 
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      margin: 5px 0;
-    }
-
-    header .contact a {
-      margin: 0 10px;
-    }
-
-    /* ================= TITLES ================= */
-    .section-title {
-      text-align: center;
-      font-size: 2.2em;
-      margin-bottom: 50px;
-      color: #1e2a78;
-    }
-
- .intro {
-      max-width: 900px;
-      margin: 30px auto;
-      text-align: center;
-      font-size: 1.1em;
-      color: #444;
-      line-height: 1.7;
-    }
-
-    .languages {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 1.1em;
-      color: #444;
-    }
-
-    /* ================= SKILLS ================= */
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 30px;
-    }
-
-    .skill {
-      background: #555;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-weight: 500;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-    }
-.skill.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .skill:hover {
-      transform: translateY(-6px) scale(1.05);
-      background: linear-gradient(135deg, #007bff, #00c6ff);
-      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
-    }
-
-    /* ================= TIMELINE ================= */
-    .timeline {
-      position: relative;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: #cdd2ff;
-      transform: translateX(-50%);
-    }
-
-    .timeline-item {
-      width: 50%;
-      padding: 20px;
-      position: relative;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.6s ease;
-    }
-    .timeline-item.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .timeline-item.left {
-      left: 0;
-    }
-
-    .timeline-item.right {
-      left: 50%;
-    }
-
-    .card {
-      background: linear-gradient(135deg, #3d44ff, #5f6bff);
-      color: #fff;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    .circle {
-      position: absolute;
-      left: 50%;
-      top: 30px;
-      transform: translate(-50%, -50%);
-      width: 18px;
-      height: 18px;
-      background: #fff;
-      border: 4px solid #5f6bff;
-      border-radius: 50%;
-      z-index: 2;
-    }
-
-    /* ================= EXPERIENCE & PROJECTS ================= */
-    .experience-item,
-    .project-item {
-      background: #fff;
-      padding: 25px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-    }
-
-    .experience-item.visible,
-    .project-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .experience-item:hover,
-    .project-item:hover {
-      transform: translateY(-5px);
-    }
- .company {
-      font-size: 1.1em;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    /* ================= MOBILE ================= */
-    @media (max-width: 768px) {
-      .timeline::before {
-        left: 10px;
-      }
-
-      .timeline-item {
-        width: 100%;
-        padding-left: 40px;
-      }
-
-      .timeline-item.right {
-        left: 0;
-      }
-
-      .circle {
-        left: 10px;
-      }
-    }
-    .background-anim {
+/* ================= BACKGROUND ANIMATION ================= */
+.background-anim {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -1;   /* behind content */
   overflow: hidden;
+  background: #f7f7f7;
 }
-
+#cobweb { width:100%; height:100%; display:block; }
 .background-anim span {
-  position: absolute;
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 35px solid rgba(0, 123, 255, 0.15);
+  position:absolute; display:block;
+  width:0; height:0;
+  border-left:20px solid transparent;
+  border-right:20px solid transparent;
+  border-bottom:35px solid rgba(0,123,255,0.15);
   animation: float 15s linear infinite;
 }
-/* Different positions + sizes */
-.background-anim span:nth-child(1) {
-  left: 10%;
-  animation-duration: 18s;
-}
+.background-anim span:nth-child(1){ left:10%; animation-duration:18s; }
+.background-anim span:nth-child(2){ left:30%; animation-duration:12s; transform:scale(1.2); }
+.background-anim span:nth-child(3){ left:50%; animation-duration:20s; transform:scale(0.8); }
+.background-anim span:nth-child(4){ left:70%; animation-duration:14s; }
+.background-anim span:nth-child(5){ left:90%; animation-duration:17s; }
 
-.background-anim span:nth-child(2) {
-  left: 30%;
-  animation-duration: 12s;
-  transform: scale(1.2);
-}
-
-.background-anim span:nth-child(3) {
-  left: 50%;
-  animation-duration: 20s;
-  transform: scale(0.8);
-}
-
-.background-anim span:nth-child(4) {
-  left: 70%;
-  animation-duration: 14s;
-}
-
-.background-anim span:nth-child(5) {
-  left: 90%;
-  animation-duration: 17s;
-}/* Animation */
 @keyframes float {
-  0% {
-    transform: translateY(100vh) rotate(0deg);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateY(-10vh) rotate(360deg);
-    opacity: 0;
-  }
+  0% { transform:translateY(100vh) rotate(0deg); opacity:0; }
+  20% { opacity:0.6; }
+  100% { transform:translateY(-10vh) rotate(360deg); opacity:0; }
 }
- 
-  </style>
+</style>
 </head>
 <body>
-  <div class="background-anim">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+<!-- BACKGROUND -->
+<div class="background-anim">
+  <canvas id="cobweb"></canvas>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<!-- HEADER -->
 
   <header>
     <h1>Moses Kamira</h1>
@@ -570,37 +382,63 @@
 
   </section>
 
-  <script>
-    // Animate skills
-    const skills = document.querySelectorAll('.skill');
-    const observerSkills = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.3 });
-    skills.forEach(skill => observerSkills.observe(skill));
+ <script>
+// =================== COBWEB SCRIPT ===================
+const canvas = document.getElementById('cobweb');
+const ctx = canvas.getContext('2d');
+let width = canvas.width = window.innerWidth;
+let height = canvas.height = window.innerHeight;
 
-    // Animate experience and projects
-    const cards = document.querySelectorAll('.experience-item, .project-item');
-    const observerCards = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.2 });
-    cards.forEach(card => observerCards.observe(card));
-    
-    const items = document.querySelectorAll('.timeline-item');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
+const POINT_COUNT = 40;
+const points = [];
+for(let i=0;i<POINT_COUNT;i++){
+  points.push({
+  x: Math.random()*width, 
+  y: Math.random()*height, 
+  vx: (Math.random()-0.5)*1,  // was 0.3
+  vy: (Math.random()-0.5)*1   // was 0.3
 });
+}
 
-items.forEach(item => observer.observe(item));
-  </script>
+function drawCobweb(){
+  ctx.clearRect(0,0,width,height);
+  ctx.strokeStyle = `rgba(0,123,255,${0.05 + Math.random()*0.15})`;
+  ctx.lineWidth=1;
+  for(let i=0;i<POINT_COUNT;i++){
+    const p1=points[i];
+    p1.x+=p1.vx; p1.y+=p1.vy;
+    if(p1.x<0||p1.x>width)p1.vx*=-1;
+    if(p1.y<0||p1.y>height)p1.vy*=-1;
+    for(let j=i+1;j<POINT_COUNT;j++){
+      const p2=points[j];
+      const dx=p1.x-p2.x, dy=p1.y-p2.y, dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<150){ ctx.beginPath(); ctx.moveTo(p1.x,p1.y); ctx.lineTo(p2.x,p2.y); ctx.stroke(); }
+    }
+  }
+  requestAnimationFrame(drawCobweb);
+}
+drawCobweb();
+window.addEventListener('resize',()=>{ width=canvas.width=window.innerWidth; height=canvas.height=window.innerHeight; });
+
+// =================== INTERSECTION OBSERVERS ===================
+const skills=document.querySelectorAll('.skill');
+const observerSkills=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting)e.target.classList.add('visible'); });
+},{threshold:0.3});
+skills.forEach(s=>observerSkills.observe(s));
+
+const cards=document.querySelectorAll('.experience-item, .project-item');
+const observerCards=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting)e.target.classList.add('visible'); });
+},{threshold:0.2});
+cards.forEach(c=>observerCards.observe(c));
+
+const items=document.querySelectorAll('.timeline-item');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting)e.target.classList.add('show'); });
+},{threshold:0.2});
+items.forEach(i=>observer.observe(i));
+</script>
 
 </body>
 </html>
