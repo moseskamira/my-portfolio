@@ -6,94 +6,224 @@
   <title>Kamira Moses - Flutter Developer Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-  .skill {
-  background: #555;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  cursor: default;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Hover Animation */
-.skill:hover {
-  transform: translateY(-6px) scale(1.05);
-  background: linear-gradient(135deg, #007bff, #00c6ff);
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
-}
-h4 {
-  font-weight: normal;
-}
-
-/* Glow effect */
-.skill::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-  transition: 0.5s;
-}
-
-.skill:hover::before {
-  left: 100%;
-}
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f7f7f7;
-      color: #333;
-      margin: 0;
-      padding: 0;
+  <style>
+    /* ================= BASE ================= */
+    * {
+      box-sizing: border-box;
     }
 
-    a { text-decoration: none; color: #ffffff; transition: color 0.3s; }
-    a:hover { color: #ffd700; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: #f7f7f7;
+      color: #333;
+    }
 
-    h1,h2,h3,h4,h5 { margin: 0; }
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-    section { padding: 50px 20px; max-width: 1200px; margin: auto; }
+    h1, h2, h3, h4, h5 {
+      margin: 0;
+    }
 
-    header {
-      background-color: #222;
+    a {
+      text-decoration: none;
       color: #fff;
-      padding: 50px 20px;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #ffd700;
+    }
+
+ ul {
+      padding-left: 18px;
+    }
+
+    /* ================= HEADER ================= */
+    header {
+      background: #222;
+      color: #fff;
+      padding: 60px 20px;
       text-align: center;
     }
 
-    header h1 { font-size: 3em; margin-bottom: 10px; }
-    header p { font-size: 1.2em; margin: 5px 0; }
-    header .contact a { margin: 0 10px; font-weight: 500; }
-
-    .intro { max-width: 900px; margin: 30px auto; text-align: center; font-size: 1.1em; color: #444; line-height: 1.7; }
-
-    .skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; }
-    .skill { background: #555; color: #fff; padding: 10px 20px; border-radius: 30px; font-weight: 500; opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
-
-    .skill.visible { opacity: 1; transform: translateY(0); }
-
-    .experience-item, .project-item {
-      background: #fff; padding: 25px; margin-bottom: 20px; border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s, opacity 0.6s;
-      opacity: 0; transform: translateY(30px);
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
     }
-    .experience-item.visible, .project-item.visible { opacity: 1; transform: translateY(0); }
 
-    .experience-item:hover, .project-item:hover { transform: translateY(-5px); }
+    header p {
+      margin: 5px 0;
+    }
 
-    .company { font-size: 1.1em; font-weight: 700; margin-top: 10px; margin-bottom: 10px; }
-    .experience-item ul, .project-item ul { margin-top: 5px; padding-left: 20px; }
+    header .contact a {
+      margin: 0 10px;
+    }
 
+    /* ================= TITLES ================= */
     .section-title {
-      text-align: center; font-size: 2em; margin-bottom: 30px; color: #444; position: relative;
+      text-align: center;
+      font-size: 2.2em;
+      margin-bottom: 50px;
+      color: #1e2a78;
     }
-    .section-title::after { content: ''; width: 60px; height: 3px; background: #888; display: block; margin: 10px auto 0; border-radius: 2px; }
 
-    .languages { text-align: center; margin-top: 20px; font-size: 1.1em; color: #444; }
+ .intro {
+      max-width: 900px;
+      margin: 30px auto;
+      text-align: center;
+      font-size: 1.1em;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .languages {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #444;
+    }
+
+    /* ================= SKILLS ================= */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .skill {
+      background: #555;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+.skill.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skill:hover {
+      transform: translateY(-6px) scale(1.05);
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+    }
+
+    /* ================= TIMELINE ================= */
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: #cdd2ff;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      width: 50%;
+      padding: 20px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease;
+    }
+    .timeline-item.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-item.left {
+      left: 0;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #3d44ff, #5f6bff);
+      color: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .circle {
+      position: absolute;
+      left: 50%;
+      top: 30px;
+      transform: translate(-50%, -50%);
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border: 4px solid #5f6bff;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    /* ================= EXPERIENCE & PROJECTS ================= */
+    .experience-item,
+    .project-item {
+      background: #fff;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .experience-item.visible,
+    .project-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .experience-item:hover,
+    .project-item:hover {
+      transform: translateY(-5px);
+    }
+ .company {
+      font-size: 1.1em;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    /* ================= MOBILE ================= */
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 10px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 40px;
+      }
+
+      .timeline-item.right {
+        left: 0;
+      }
+
+      .circle {
+        left: 10px;
+      }
+    }
+ 
   </style>
 </head>
 <body>
@@ -169,10 +299,53 @@ h4 {
       <strong>Languages:</strong> English (Professional), Lusoga (Native), Luganda
     </div>
   </section>
+  
+  <section>
+  <h2 class="section-title">Career Timeline</h2>
+  <div class="timeline">
+    <div class="timeline-item left">
+      <div class="circle"></div>
+      <div class="card">
+        <h3>Senior Flutter Developer</h3>
+        <p>Etinx</p>
+        <small>Apr 2022 - Feb 2026</small>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="circle"></div>
+      <div class="card">
+        <h3>Android Developer</h3>
+        <p>Etinx</p>
+        <small>Apr 2021 - Apr 2022</small>
+      </div>
+    </div>
+    
+    
+        <div class="timeline-item left">
+      <div class="circle"></div>
+      <div class="card">
+        <h3>Android Developer</h3>
+        <p>Mcash Uganda</p>
+        <small>Nov 2019 - Nov 2021</small>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="circle"></div>
+      <div class="card">
+        <h3>Software Engineer</h3>
+        <p>Andela</p>
+        <small>Dec 2018 - Oct 2019</small>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- Experience -->
   <section id="experience">
-    <h2 class="section-title">Experience</h2>
+    <h2 class="section-title">Professional Experience</h2>
 
     <!-- Etinx | Flutter Developer -->
     <div class="experience-item">
@@ -344,6 +517,18 @@ h4 {
       });
     }, { threshold: 0.2 });
     cards.forEach(card => observerCards.observe(card));
+    
+    const items = document.querySelectorAll('.timeline-item');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+items.forEach(item => observer.observe(item));
   </script>
 
 </body>
