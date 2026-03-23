@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+Put your HTML text here<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -42,7 +42,19 @@ header .contact a { margin:0 10px; }
 .timeline-item.show { opacity:1; transform:translateY(0); }
 .timeline-item.left { left:0; }
 .timeline-item.right { left:50%; }
-.card { background:linear-gradient(135deg,#3d44ff,#5f6bff); color:#fff; padding:20px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.1); }
+.card { 
+  background: #555; /* same as skills cards */
+  color: #fff; 
+  padding: 20px; 
+  border-radius: 15px; 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+  transition: all 0.3s ease; /* optional: smooth hover transitions */
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02); /* subtle hover effect */
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
 .circle { position:absolute; left:50%; top:30px; transform:translate(-50%,-50%); width:18px; height:18px; background:#fff; border:4px solid #5f6bff; border-radius:50%; z-index:2; }
 
 /* ================= EXPERIENCE & PROJECTS ================= */
