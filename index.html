@@ -3,11 +3,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moses Kamira - Flutter Developer Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ================= BASE ================= */
 * { box-sizing:border-box; margin:0; padding:0; }
-body { font-family:'Roboto', sans-serif; background:#f7f7f7; color:#333; overflow-x:hidden; }
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+}
+
+p, li {
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+h1 { font-size: 3rem; font-weight: 700; }
+h2 { font-size: 2rem; font-weight: 600; }
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.company {
+  font-size: 1.2rem;
+}
+
+.experience-item,
+.project-item {
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 14px;
+}
 
 section { padding:60px 20px; max-width:1200px; margin:auto; }
 h1,h2,h3,h4,h5 { margin:0; }
@@ -287,19 +316,29 @@ header .contact a { margin:0 10px; }
   <!-- Projects -->
   <section id="projects">
     <h2 class="section-title">Projects</h2>
-    <div class="project-item">
-  <div class="company">Shopela | Personal Project</div>
+ <div class="project-item">
+  <div class="company">Shopela | Personal E-Commerce Platform</div>
   <div><strong>Oct 2025 - Present</strong></div>
   <ul>
-    <li>Implemented both frontend and backend: Flutter for UI/UX and Firebase for authentication, firestore, and cloud functions.</li>
-    <li>Modular Flutter app using Riverpod for state management, secure authentication, real-time updates, and offline sync.</li>
-    <li>Integrated analytics to monitor user engagement and optimize performance.</li>
-    <li>Deployed to Google Play Store, ensuring smooth installation and version management.</li>
-    <li>Skills: Flutter, Firebase, Riverpod</li>
+    <li>Conceptualized, designed, and developed a full-featured e-commerce mobile application from scratch, owning both product vision and full technical implementation.</li>
+
+    <li>Built a production-grade Flutter application with a modular and scalable architecture using Riverpod for state management, ensuring clean separation of concerns and maintainability.</li>
+
+    <li>Implemented a complete backend using Firebase (Authentication, Cloud Firestore, and Cloud Functions), enabling secure user authentication, real-time data synchronization, and serverless business logic.</li>
+
+    <li>Designed and delivered a smooth, intuitive UI/UX with focus on performance, responsiveness, and seamless user experience across devices.</li>
+
+    <li>Added analytics tracking to monitor user behavior and app performance, supporting future product optimization and feature improvements.</li>
+
+    <li>Prepared and deployed the application to Google Play Store, handling release builds, versioning, and production readiness.</li>
+
+    <li><strong>Skills:</strong> Flutter, Firebase (Auth, Firestore, Cloud Functions), Riverpod, UI/UX Design, App Architecture, Analytics</li>
   </ul>
-   <p class="project-note">
-    Note: Personal project — Play Store listing is not yet publicly distributed, so user metrics are not available.
+
+  <p class="project-note">
+    Note: Personal project — currently in early release stage with limited public distribution; user analytics and metrics are not yet available.
   </p>
+
   <div style="margin-top:10px;">
     <a href="https://play.google.com/store/apps/details?id=co.shopela.client"
        target="_blank"
