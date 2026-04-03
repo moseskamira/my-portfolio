@@ -93,9 +93,11 @@ header .contact a {
   max-width: 900px;
   margin: 30px auto;
   text-align: center;
-  font-size: 1.1em;
+  line-height: 1.7;
+  font-size: 1em;
   color: #444;
 }
+
 
 .languages {
   text-align: center;
