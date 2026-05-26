@@ -3,7 +3,7 @@
 A simple web page for **My Portfolio**, hosted via GitHub Pages.
 
 ### 🌐 Live Demo
-[View the Privacy Policy page](https://moseskamira.github.io/my-portfolio/)
+[View my portfolio page](https://moseskamira.github.io/my-portfolio/)
 
 ---
 
