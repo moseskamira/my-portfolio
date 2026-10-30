@@ -16,9 +16,7 @@
     <span></span>
     <span></span>
 </div>
-
-
-<header>
+   <header>
     <h1>Moses Kamira</h1>
     <p>Flutter Developer | Mobile Applications Developer</p>
     <p class="contact">
@@ -53,6 +51,7 @@
         </a>
     </p>
 </header>
+<div id="header"></div>
 
 <!-- Introduction -->
 <section>
@@ -600,64 +599,7 @@
         </ul>
     </div>
 </section>
-
-<script>
-    // =================== COBWEB SCRIPT ===================
-    const canvas = document.getElementById('cobweb');
-    const ctx = canvas.getContext('2d');
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
-
-    const POINT_COUNT = 40;
-    const points = [];
-    for(let i=0;i<POINT_COUNT;i++){
-      points.push({
-      x: Math.random()*width,
-      y: Math.random()*height,
-      vx: (Math.random()-0.5)*1,  // was 0.3
-      vy: (Math.random()-0.5)*1   // was 0.3
-    });
-    }
-
-    function drawCobweb(){
-      ctx.clearRect(0,0,width,height);
-      ctx.strokeStyle = 'rgba(0,123,255,0.15)';
-      ctx.lineWidth=1;
-      for(let i=0;i<POINT_COUNT;i++){
-        const p1=points[i];
-        p1.x+=p1.vx; p1.y+=p1.vy;
-        if(p1.x<0||p1.x>width)p1.vx*=-1;
-        if(p1.y<0||p1.y>height)p1.vy*=-1;
-        for(let j=i+1;j<POINT_COUNT;j++){
-          const p2=points[j];
-          const dx=p1.x-p2.x, dy=p1.y-p2.y, dist=Math.sqrt(dx*dx+dy*dy);
-          if(dist<150){ ctx.beginPath(); ctx.moveTo(p1.x,p1.y); ctx.lineTo(p2.x,p2.y); ctx.stroke(); }
-        }
-      }
-      requestAnimationFrame(drawCobweb);
-    }
-    drawCobweb();
-    window.addEventListener('resize',()=>{ width=canvas.width=window.innerWidth; height=canvas.height=window.innerHeight; });
-
-    // =================== INTERSECTION OBSERVERS ===================
-    const skills=document.querySelectorAll('.skill');
-    const observerSkills=new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting)e.target.classList.add('visible'); });
-    },{threshold:0.3});
-    skills.forEach(s=>observerSkills.observe(s));
-
-    const cards=document.querySelectorAll('.experience-item, .project-item');
-    const observerCards=new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting)e.target.classList.add('visible'); });
-    },{threshold:0.2});
-    cards.forEach(c=>observerCards.observe(c));
-
-    const items=document.querySelectorAll('.timeline-item');
-    const observer=new IntersectionObserver(entries=>{
-      entries.forEach(e=>{ if(e.isIntersecting)e.target.classList.add('show'); });
-    },{threshold:0.2});
-    items.forEach(i=>observer.observe(i));
-</script>
+ <script src="js/script.js"></script>
 
 </body>
 </html>
