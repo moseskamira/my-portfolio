@@ -11,5 +11,9 @@ A simple web page for **My Portfolio**, hosted via GitHub Pages.
 
 This project uses only static HTML/CSS and can be hosted via GitHub Pages.
 
+## To run project
+
+open index.html
+
 
 

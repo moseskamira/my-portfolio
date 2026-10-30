@@ -1,4 +1,4 @@
-/* ================= GLOBAL RESET ================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +13,6 @@ html, body {
   background: #f7f7f7;
 }
 
-/* ================= TYPOGRAPHY ================= */
 h1, h2, h3, h4 {
   font-weight: 600;
 }
@@ -32,7 +31,6 @@ h1, h2, h3, h4, h5 { margin: 0; }
   font-weight: 700;
 }
 
-/* ================= LAYOUT ================= */
 section {
   padding: 60px 20px;
   max-width: 1200px;
@@ -54,7 +52,6 @@ a:hover {
   color: #ffd700;
 }
 
-/* ================= HEADER ================= */
 header {
   background: #222;
   color: #fff;
@@ -80,7 +77,6 @@ header .contact a {
   margin: 0 10px;
 }
 
-/* ================= TITLES ================= */
 .section-title {
   text-align: center;
   font-size: 2.2em;
@@ -91,7 +87,7 @@ header .contact a {
 
 .intro {
   max-width: 900px;
-  margin: 30px auto;
+  margin: 20px auto;
   text-align: center;
   line-height: 1.7;
   font-size: 1em;
@@ -101,12 +97,11 @@ header .contact a {
 
 .languages {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 1.1em;
   color: #444;
 }
 
-/* ================= SKILLS ================= */
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -137,12 +132,10 @@ header .contact a {
   box-shadow: 0 8px 20px rgba(0,123,255,0.4);
 }
 
-/* ================= TIMELINE ================= */
 .timeline {
   position: relative;
 }
 
-/* center line */
 .timeline::before {
   content: '';
   position: absolute;
@@ -203,7 +196,6 @@ header .contact a {
   z-index: 2;
 }
 
-/* ================= EXPERIENCE & PROJECTS ================= */
 .experience-item,
 .project-item {
   background: #fff;
@@ -233,7 +225,6 @@ header .contact a {
   margin-bottom: 10px;
 }
 
-/* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
   .timeline::before {
@@ -251,7 +242,6 @@ header .contact a {
   }
 }
 
-/* ================= BACKGROUND ================= */
 .background-anim {
   position: fixed;
   inset: 0;
